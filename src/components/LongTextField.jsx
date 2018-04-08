@@ -27,9 +27,8 @@ const LongTextField = ({
         id={id}
         onChange={({ target }) => onChange({ id, value: target.value })}
       />
-
     </StyledLabel>
-      {error && <InlineError>{error}</InlineError>}
+    {error && <InlineError>{error}</InlineError>}
   </div>
 );
 

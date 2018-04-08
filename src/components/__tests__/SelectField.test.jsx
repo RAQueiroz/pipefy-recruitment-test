@@ -29,8 +29,8 @@ describe(" <SelectField/>", () => {
     expect(container.querySelector("select>option:nth-child(4)")).toBeTruthy();
   });
 
-    it("on change to be called", () => {
-        Simulate.change(container.querySelector('select'));
-        expect(onChangeSpy).toHaveBeenCalled();
-    });
+  it("on change to be called", () => {
+    Simulate.change(container.querySelector("select"));
+    expect(onChangeSpy).toHaveBeenCalled();
+  });
 });

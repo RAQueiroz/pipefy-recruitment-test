@@ -41,7 +41,7 @@ class ChecklistVerticalField extends React.Component {
             style={{ display: "block", padding: 10 }}
             onClick={event => this.onChange(item)}
           >
-            <StyledCheckbox checked={value.indexOf(item) !== -1}  />
+            <StyledCheckbox checked={value.indexOf(item) !== -1} />
             {item}
           </label>
         ))}

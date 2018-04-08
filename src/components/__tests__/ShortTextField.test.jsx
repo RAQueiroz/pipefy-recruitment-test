@@ -13,9 +13,7 @@ describe(" <ShortTextField/>", () => {
     value: "Josh"
   };
 
-  const wrapper = shallow(
-    <ShortTextField onChange={onChangeSpy} {...item} />
-  );
+  const wrapper = shallow(<ShortTextField onChange={onChangeSpy} {...item} />);
 
   it("renders", () => {
     expect(wrapper.find(`#${item.id}`)).toHaveLength(1);
@@ -32,17 +30,13 @@ describe(" <ShortTextField/>", () => {
   });
 
   it("display value based on props", () => {
-    expect(wrapper.find(`#${item.id}`).props().value).toEqual(
-      item.value
-    );
+    expect(wrapper.find(`#${item.id}`).props().value).toEqual(item.value);
     wrapper.setProps({ value: "John" });
     expect(wrapper.find(`#${item.id}`).props().value).toEqual("John");
   });
 
   it("check if onChange works", () => {
-    wrapper
-      .find(`#${item.id}`)
-      .simulate("change", { target: { value: 4 } });
+    wrapper.find(`#${item.id}`).simulate("change", { target: { value: 4 } });
     expect(onChangeSpy).toBeCalled();
   });
 });

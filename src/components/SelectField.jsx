@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import StyledLabel from "./StyledLabel";
-import {InlineError} from "./StyledElements";
+import { InlineError } from "./StyledElements";
 import Colors from "../utils/Colors";
 
 const StyledSelect = styled.select`
- border: solid 1px ${props => (props.error ? Colors.errorLight : "#ccc")};
+  border: solid 1px ${props => (props.error ? Colors.errorLight : "#ccc")};
   line-height: 40px;
   height: 40px;
   border-radius: 5px;
@@ -37,9 +37,8 @@ const SelectField = ({
           </option>
         ))}
       </StyledSelect>
-
     </StyledLabel>
-      {error && <InlineError>{error}</InlineError>}
+    {error && <InlineError>{error}</InlineError>}
   </div>
 );
 

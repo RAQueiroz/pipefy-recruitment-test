@@ -3,7 +3,6 @@ import LongTextField from "../LongTextField";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 
-
 describe(" <LongTextField/>", () => {
   const onChangeSpy = jest.fn();
 

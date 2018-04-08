@@ -29,7 +29,6 @@ const ErrorMessage = styled.div`
   border: 1px solid ${Colors.errorLight};
 `;
 
-
 const SuccessMessage = styled.div`
   position: relative;
   padding: 0.75rem 1.25rem;
@@ -48,14 +47,7 @@ const InlineError = styled.div`
 
 const Spacer = styled.div`
   width: 100%;
-  height: ${props=>  props.lg ? '24px': props.md ? '12px' : '6px'};
+  height: ${props => (props.lg ? "24px" : props.md ? "12px" : "6px")};
 `;
 
-export {
-    Button,
-    Card,
-    ErrorMessage,
-    SuccessMessage,
-    InlineError,
-    Spacer
-}
+export { Button, Card, ErrorMessage, SuccessMessage, InlineError, Spacer };

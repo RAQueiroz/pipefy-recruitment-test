@@ -3,7 +3,7 @@ import styled from "styled-components";
 import StyledLabel from "./StyledLabel";
 import { InlineError } from "./StyledElements";
 
-const StyledRadio= styled.div`
+const StyledRadio = styled.div`
   border: solid 1px ${({ checked }) => (checked ? "#006699" : "#CCC")};
   width: 20px;
   height: 20px;
@@ -41,7 +41,7 @@ const RadioVerticalField = ({
           })
         }
       >
-        <StyledRadio checked={value === item}  />
+        <StyledRadio checked={value === item} />
         {item}
       </label>
     ))}

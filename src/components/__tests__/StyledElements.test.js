@@ -25,19 +25,19 @@ describe("Test snapshots of styled elements", () => {
     expect(cardContainer.firstChild).toMatchSnapshot();
   });
 
-    it("ErrorMessage to match snapshot", () => {
-        expect(errorMessageContainer.firstChild).toMatchSnapshot();
-    });
+  it("ErrorMessage to match snapshot", () => {
+    expect(errorMessageContainer.firstChild).toMatchSnapshot();
+  });
 
-    it("InlineError to match snapshot", () => {
-        expect(inlineErrorContainer.firstChild).toMatchSnapshot();
-    });
+  it("InlineError to match snapshot", () => {
+    expect(inlineErrorContainer.firstChild).toMatchSnapshot();
+  });
 
-    it("Spacer to match snapshot", () => {
-        expect(spacerContainer.firstChild).toMatchSnapshot();
-    });
+  it("Spacer to match snapshot", () => {
+    expect(spacerContainer.firstChild).toMatchSnapshot();
+  });
 
-    it("SuccessMessage to match snapshot", () => {
-        expect(successMessageContainer.firstChild).toMatchSnapshot();
-    });
+  it("SuccessMessage to match snapshot", () => {
+    expect(successMessageContainer.firstChild).toMatchSnapshot();
+  });
 });

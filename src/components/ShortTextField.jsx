@@ -28,9 +28,8 @@ const ShortTextField = ({
         type="text"
         id={id}
       />
-
     </StyledLabel>
-      {error && <InlineError>{error}</InlineError>}
+    {error && <InlineError>{error}</InlineError>}
   </div>
 );
 
