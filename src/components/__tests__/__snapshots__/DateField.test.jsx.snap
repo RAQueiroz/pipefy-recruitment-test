@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` <DateField/> to match snapshot 1`] = `
+<div>
+  <styled.label>
+    Name
+    <styled.input
+      id="xpto"
+      onChange={[Function]}
+      type="date"
+      value="08/12/1986"
+    />
+  </styled.label>
+</div>
+`;

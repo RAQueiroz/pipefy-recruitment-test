@@ -4,14 +4,14 @@ import StyledLabel from "./StyledLabel";
 import { InlineError } from "./StyledElements";
 import Colors from "../utils/Colors";
 
-const StyledInput = styled.input`
+const StyledInput = styled.textarea`
   border: solid 1px ${props => (props.error ? Colors.errorLight : "#ccc")};
   line-height: 40px;
   padding-left: 10px;
   border-radius: 5px;
 `;
 
-const ShortTextField = ({
+const LongTextField = ({
   label,
   id,
   error,
@@ -22,11 +22,10 @@ const ShortTextField = ({
     <StyledLabel>
       {label}
       <StyledInput
-        error={error}
         value={value}
-        onChange={({ target }) => onChange({ id, value: target.value })}
         type="text"
         id={id}
+        onChange={({ target }) => onChange({ id, value: target.value })}
       />
 
     </StyledLabel>
@@ -34,4 +33,4 @@ const ShortTextField = ({
   </div>
 );
 
-export default ShortTextField;
+export default LongTextField;

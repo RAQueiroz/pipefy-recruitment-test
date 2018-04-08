@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` <ShortTextField/> to match snapshot 1`] = `
+<div>
+  <styled.label>
+    Name
+    <styled.input
+      id="xpto"
+      onChange={[Function]}
+      type="text"
+      value="Josh"
+    />
+  </styled.label>
+</div>
+`;

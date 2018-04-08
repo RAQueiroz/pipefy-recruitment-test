@@ -1,6 +1,7 @@
 import React from "react";
 import { request } from "graphql-request";
 import FormField from "./FormField";
+import {Button, Card} from "./StyledElements";
 
 const Debug = ({object})=> (  <pre>{JSON.stringify(object, null, 2)}</pre>);
 class Form extends React.Component {
@@ -87,6 +88,7 @@ class Form extends React.Component {
     const { publicForm, filledFields } = this.state;
     return (
       <div>
+          <Card>
 
         {publicForm.formFields &&
           publicForm.formFields.map(item => (
@@ -98,7 +100,9 @@ class Form extends React.Component {
             />
           ))}
 
+          <Button>Submit</Button>
           <Debug object={this.state}></Debug>
+          </Card>
       </div>
     );
   }

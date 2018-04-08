@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` <RadioVerticalField/> match snapshot 1`] = `
+<div
+  id="xpto"
+>
+  <label
+    class="sc-bdVaJa hOggSJ"
+  >
+    Name
+  </label>
+  <label
+    data-testid="radio-0"
+    style="display: block; padding: 10px; cursor: pointer;"
+  >
+    <div
+      class="sc-gzVnrw ihXyvo"
+    />
+    A
+  </label>
+  <label
+    data-testid="radio-1"
+    style="display: block; padding: 10px; cursor: pointer;"
+  >
+    <div
+      class="sc-gzVnrw ihXyvo"
+    />
+    B
+  </label>
+  <label
+    data-testid="radio-2"
+    style="display: block; padding: 10px; cursor: pointer;"
+  >
+    <div
+      class="sc-gzVnrw ihXyvo"
+    />
+    C
+  </label>
+</div>
+`;

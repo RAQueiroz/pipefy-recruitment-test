@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` <SelectField/> to match snapshot 1`] = `
+<div>
+  <label
+    class="sc-bdVaJa hOggSJ"
+  >
+    Name
+    <select
+      class="sc-gzVnrw dpetWd"
+      id="xpto"
+    >
+      <option
+        value=""
+      >
+        Select one
+      </option>
+      <option
+        value="A"
+      >
+        A
+      </option>
+      <option
+        value="B"
+      >
+        B
+      </option>
+      <option
+        value="C"
+      >
+        C
+      </option>
+    </select>
+  </label>
+</div>
+`;

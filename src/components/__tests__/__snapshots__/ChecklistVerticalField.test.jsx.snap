@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` <ChecklistVerticalField/> match snapshot 1`] = `
+<div
+  id="xpto"
+>
+  <label
+    class="sc-bdVaJa hOggSJ"
+  >
+    Name
+  </label>
+  <label
+    data-testid="check-0"
+    style="display: block; padding: 10px;"
+  >
+    <div
+      class="sc-gzVnrw bIfHpe"
+    />
+    A
+  </label>
+  <label
+    data-testid="check-1"
+    style="display: block; padding: 10px;"
+  >
+    <div
+      class="sc-gzVnrw bIfHpe"
+    />
+    B
+  </label>
+  <label
+    data-testid="check-2"
+    style="display: block; padding: 10px;"
+  >
+    <div
+      class="sc-gzVnrw bIfHpe"
+    />
+    C
+  </label>
+</div>
+`;

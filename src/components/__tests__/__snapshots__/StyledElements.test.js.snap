@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test snapshots of styled elements Button to match snapshot 1`] = `
+<button
+  class="sc-bdVaJa isjKgN"
+/>
+`;
+
+exports[`Test snapshots of styled elements Card to match snapshot 1`] = `
+<div
+  class="sc-bwzfXH kgKear"
+/>
+`;
+
+exports[`Test snapshots of styled elements ErrorMessage to match snapshot 1`] = `
+<div
+  class="sc-htpNat hCJIlZ"
+/>
+`;
+
+exports[`Test snapshots of styled elements InlineError to match snapshot 1`] = `
+<div
+  class="sc-ifAKCX kKLNNA"
+/>
+`;
+
+exports[`Test snapshots of styled elements Spacer to match snapshot 1`] = `
+<div
+  class="sc-EHOje cAQQWe"
+/>
+`;
+
+exports[`Test snapshots of styled elements SuccessMessage to match snapshot 1`] = `
+<div
+  class="sc-bxivhb bCAxHu"
+/>
+`;
