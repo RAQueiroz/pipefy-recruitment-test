@@ -1,6 +1,13 @@
 import React from "react";
+import styled from "styled-components";
 import FormField from "./FormField";
-import { Button, Card, SuccessMessage } from "./StyledElements";
+import {
+  Button,
+  Card,
+  ErrorMessage,
+  Spacer,
+  SuccessMessage
+} from "./StyledElements";
 import { withQuery, executeQuery } from "../utils/graphqlHelpers";
 import {
   getPublicFormQuery,
@@ -8,15 +15,40 @@ import {
 } from "../utils/graphqlQueries";
 import validate from "validate.js";
 import Loading from "./Loading";
-const Debug = ({ object }) => <pre>{JSON.stringify(object, null, 2)}</pre>;
+import FormHeader from "./FormHeader";
+import ErrorStack from "./ErrorStack";
+import Debug from "../utils/Debug";
+
+const StyledContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px 10px;
+  grid-template-areas:
+    " . . . . . "
+    ".  left content content .";
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "left "
+      "content ";
+  }
+`;
+
+const StyledLeftArea = styled.div`
+  grid-area: left;
+`;
+const StyledContentArea = styled.div`
+  grid-area: content;
+`;
 
 class Form extends React.Component {
   state = {
     publicForm: {},
     filledFields: {},
-    loading: true,
     formErrors: {},
-    submitted: false
+    submitted: false,
+    showDebug: false
   };
 
   componentDidMount() {}
@@ -94,30 +126,54 @@ class Form extends React.Component {
             isSending: false
           });
         })
-        .catch(data => {});
+        .catch(({ response }) => {
+          debugger;
+          if (response.errors) {
+            this.setState({
+              errors: response.errors,
+              isSending: false
+            });
+          }
+        });
     }
   };
 
   render() {
-    const { publicForm, loading, errors } = this.props;
+    const { publicForm, loading } = this.props;
     const {
+      errors = [],
       filledFields,
       formErrors = {},
       successMessage,
-      isSending
+      isSending,
+      showDebug
     } = this.state;
-    return (
-      <div>
-        {loading ? (
-          <Loading />
-        ) : (
+
+    // If publicForm the query didn't found a valid form for the formId provided
+    if (!loading && !publicForm) {
+      return <ErrorMessage>The formId provided is invalid.</ErrorMessage>;
+    }
+
+    return loading ? (
+      <Loading />
+    ) : (
+      <StyledContainer>
+        <StyledLeftArea>
           <Card>
-            <div>
-              {successMessage && (
-                <SuccessMessage>{successMessage}</SuccessMessage>
-              )}
-              {isSending && <Loading />}
-            </div>
+            <FormHeader publicFormSettings={publicForm.publicFormSettings} />
+
+            {errors && <ErrorStack errors={errors} />}
+
+            {successMessage && (
+              <SuccessMessage>{successMessage}</SuccessMessage>
+            )}
+            {isSending && <Loading />}
+
+            <Debug object={this.state} active={showDebug} />
+          </Card>
+        </StyledLeftArea>
+        <StyledContentArea>
+          <Card>
             <form onSubmit={this.onSubmit}>
               {publicForm.formFields &&
                 publicForm.formFields.map(item => (
@@ -130,12 +186,12 @@ class Form extends React.Component {
                   />
                 ))}
 
-              <Button>Submit</Button>
+              <Spacer lg />
+              <Button type="submit">Submit</Button>
             </form>
-            <Debug object={this.state} />
           </Card>
-        )}
-      </div>
+        </StyledContentArea>
+      </StyledContainer>
     );
   }
 }
