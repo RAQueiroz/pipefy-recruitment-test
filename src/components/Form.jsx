@@ -72,7 +72,6 @@ class Form extends React.Component {
       }
     };
 
-    console.log(validate(this.state.filledFields, constraints));
     let formErrors = validate(this.state.filledFields, constraints);
     this.setState({ formErrors, submitted: true });
 

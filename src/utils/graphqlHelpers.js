@@ -12,7 +12,6 @@ const withQuery = query => Component => {
     componentDidMount() {
       request(graphqlUrl, query, this.props)
         .then(data => {
-          console.log(JSON.stringify(data, null, 2));
           this.setState({
             ...data,
             loading: false
